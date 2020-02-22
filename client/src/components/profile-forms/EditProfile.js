@@ -59,7 +59,7 @@ const EditProfile = ({
       instagram: loading || !profile.social ? "" : profile.social.instagram,
       skills: loading || !profile.skills ? "" : profile.skills.join(",")
     });
-  }, [loading]);
+  }, [loading, getCurrentProfile]);
 
   const handleChange = e =>
     setFormData({
