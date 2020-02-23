@@ -55,7 +55,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 // @route GET api/posts/:id
-// @desc Get posts by ID
+// @desc Get post by ID
 // @access Private
 router.get("/:id", auth, async (req, res) => {
   try {
@@ -63,7 +63,7 @@ router.get("/:id", auth, async (req, res) => {
     if (!post) {
       return res.status(404).json({ msg: "post not found" });
     }
-    res.json(post);
+    res.status(200).json(post);
   } catch (err) {
     console.error(err.message);
     if (err.kind === "ObjectId") {
